@@ -9,6 +9,7 @@ const routes: Routes = [
   {path:'book',  loadComponent:()=>import('./Bookings/booking/booking.component').then(c=>c.BookingComponent)},
   {path:'book/:id', canActivate:[AuthGuardService], loadComponent:()=>import('./Bookings/single-booking/single-booking.component').then(c=>c.SingleBookingComponent)},
   {path:'book/:id/edit', canActivate:[AuthGuardService], loadComponent:()=>import('./Bookings/update-booking/update-booking.component').then(c=>c.UpdateBookingComponent)},
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   {path:'**', loadComponent:()=>import('./page-not-found/page-not-found.component').then(c=>c.PageNotFoundComponent)}
 ];
 
