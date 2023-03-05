@@ -9,3 +9,4 @@ const routes: Routes = [{ path: '', component: AuthComponent }];
   exports: [RouterModule]
 })
 export class AuthRoutingModule { }
+

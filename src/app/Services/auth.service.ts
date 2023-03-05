@@ -6,42 +6,42 @@ import { Injectable } from '@angular/core';
 export class AuthService {
 
   constructor() { }
-  
-  isLoggedIn=false
-  private role=''
-  private name=''
+
+  isLoggedIn = false
+  private role = ''
+  private name = ''
 
 
-  getName(){
-  return this.name
+  getName() {
+    return this.name
   }
 
-getRole(){
+  getRole() {
     return this.role
-    }
+  }
 
-    setRole(role:string){
-      this.role=role
-    }
-    setName(name:string){
-      this.name=name
-    }
+  setRole(role: string) {
+    this.role = role
+  }
+  setName(name: string) {
+    this.name = name
+  }
 
 
-  getAuthStatus():Promise<boolean>{
-    const promise = new Promise<boolean>((resolve,reject)=>{
-    setTimeout(()=>{
-      resolve(this.isLoggedIn)
-    },10)
+  getAuthStatus(): Promise<boolean> {
+    const promise = new Promise<boolean>((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.isLoggedIn)
+      }, 10)
     })
     return promise;
   }
 
-  login(){
-    this.isLoggedIn=true
+  login() {
+    this.isLoggedIn = true
   }
 
-  logout(){
-    this.isLoggedIn=false;
+  logout() {
+    this.isLoggedIn = false;
   }
 }
