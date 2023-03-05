@@ -33,4 +33,19 @@ export interface AddBooking{
     Destination:string
     TravelDate:string
 }
-
+export interface AuthState {
+    isLoggedIn: boolean
+    loading: false
+    Id:string,
+    Name:string,
+    Email:string,
+    Password:string,
+    user: LoginSuccess | null
+    errorMessage: string | null
+  }
+  export interface Logged {
+    Name:string
+    Email:string
+    Password:string
+    errorMessage: string | null
+  }
